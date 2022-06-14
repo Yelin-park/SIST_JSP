@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>2022. 6. 14. - 오후 2:47:38</title>
+</head>
+<body>
+<h3>ex02</h3>
+<!-- tabindex 속성으로 탭키를 누르면 순서에 따라 이동함 -->
+<form action="ex02_ok.jsp" method="get">
+ 이름 : <input type="text" name="name" autofocus="autofocus" tabindex="1"><br>
+ 나이 : <input type="text" name="age" tabindex="2"><br>
+ <input type="submit" tabindex="3">
+ <input type="reset">
+</form>
+
+<script>
+	$(function(){
+		$("form").submit(function (event) {
+			if( $(":text[name=name]").val().trim() == "") {
+				alert("이름 입력은 필수 사항입니다.");
+				event.preventDefault();
+				$(":text[name=name]").focus();
+				return;
+			}
+			
+			// 숫자형(정수) 체크
+			if( $(":text[name=age]").val().trim() == "") {
+				alert("나이 입력은 필수 사항입니다.");
+				event.preventDefault();
+				$(":text[name=age]").focus();
+				return;
+			}
+		});
+	});
+	
+</script>
+</body>
+</html>
