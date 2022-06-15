@@ -28,6 +28,7 @@
 	? 뒤에 날아오는 값을 받아오는 방법으로 param 사용
 	EL안에 param 기본객체가 있음
 --%>
+
 name : ${param.name}<br>
 age : ${param.age}<br>
 
