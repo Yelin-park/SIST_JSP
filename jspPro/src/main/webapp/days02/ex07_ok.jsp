@@ -90,8 +90,7 @@
 		} // if
 	}); --%>
 
-	// 아래 코딩 안되서 강사님이 확인하실 예정
-	// 모든 라디오 버튼을 가져와서 선택한 gender 값의 속성을 checked 주겠다.
+	// 선택한 gender 값의 라디오 버튼의 속성을 checked 주겠다.
 	 $(":radio[value='<%= gender%>']").prop("checked" , true);
 </script>
 </body>
