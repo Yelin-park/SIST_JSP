@@ -9,7 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" type="image/x-icon" href="../images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>2022. 6. 17. - 오전 9:34:09</title>
 <style>
@@ -99,6 +98,10 @@
 				.find("td:first-child :checkbox")
 				.prop("checked", $(this).prop("checked"))
 	});
+	
+	$(":checkbox:not(#ckbAll)").click(function (event) {
+		$("#ckbAll").prop("checked", $(":checkbox:not(#ckbAll):checked").length == $(":checkbox:not(#ckbAll)").length ? "checked" : ""); 
+	});
 
 	// 확인 버튼을 눌렀을 때
 	$("#checked_empno").on("click", function () {
@@ -114,7 +117,8 @@
 
         location.href = "<%=contextPath%>/days04/ex01_finish.jsp?empno=" + empnos.join("&empno=");
 	});
-	
+</script>
+
 <%--     
 	$("#okbtn").click(function (event) {
         let form = $("<form>");
@@ -129,7 +133,6 @@
         $("body").append(form);
         $("#empsubmit").submit();
     }); --%>
-</script>
 
 </body>
 </html>
