@@ -55,8 +55,7 @@
 				${param.selDept}번 부서원은 총 ${list.size()}명 입니다.
 			</td>
 		</tr>
-	</tfoot>
-	
+	</tfoot>	
 </table>
 <a href="<%= contextPath %>/scott/dept">다시하기</a>
 </body>

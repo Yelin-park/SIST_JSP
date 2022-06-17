@@ -31,7 +31,7 @@ public class ScottEmp extends HttpServlet {
 		System.out.println("> ScottEmp 서블릿의 doGet() 호출 O");
 		
 		// http://localhost/jspPro/scott/emp?[selDept=10]
-		String pdeptno = request.getParameter("selDept");
+		String pdeptno = request.getParameter("selDept"); // 넘겨져오는 부서번호를 가져와서..
 		
 		// DB 연동 작업하여 부서정보를 담음
 		ArrayList<EmpDTO> list = null;

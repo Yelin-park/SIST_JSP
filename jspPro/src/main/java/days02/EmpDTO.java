@@ -11,6 +11,7 @@ public class EmpDTO {
 	private double sal;
 	private double comm;
 	private int deptno;
+	private String dname;	
 	
 	// constructor
 	public EmpDTO() {
@@ -27,6 +28,19 @@ public class EmpDTO {
 		this.sal = sal;
 		this.comm = comm;
 		this.deptno = deptno;
+	}
+	
+	public EmpDTO(int empno, String ename, String job, int mgr, Date hiredate, double sal, double comm, int deptno, String dname) {
+		super();
+		this.empno = empno;
+		this.ename = ename;
+		this.job = job;
+		this.mgr = mgr;
+		this.hiredate = hiredate;
+		this.sal = sal;
+		this.comm = comm;
+		this.deptno = deptno;
+		this.dname = dname;
 	}
 	
 	//getter, setter
@@ -78,11 +92,18 @@ public class EmpDTO {
 	public void setDeptno(int deptno) {
 		this.deptno = deptno;
 	}
+	
+	public String getDname() {
+		return dname;
+	}
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
 
 	@Override
 	public String toString() {
 		return "EmpDTO [empno=" + empno + ", ename=" + ename + ", job=" + job + ", mgr=" + mgr + ", hiredate="
-				+ hiredate + ", sal=" + sal + ", comm=" + comm + ", deptno=" + deptno + "]";
+				+ hiredate + ", sal=" + sal + ", comm=" + comm + ", deptno=" + deptno + ", dname=" + dname + "]";
 	}
 	
 } // EmpDTO
