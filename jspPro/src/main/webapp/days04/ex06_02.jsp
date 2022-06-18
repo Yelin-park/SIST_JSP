@@ -26,10 +26,9 @@ r addr : <%= request.getAttribute("addr") %><br>
 p color <%= pageContext.getAttribute("color") %><br>
 
 <br>
-
 <!-- 페이지 이동시 name과 age만 이동되어짐 -->
 <a href="ex06_03.jsp">ex06_03.jsp</a>
-
+ 
 <%
 	// 포워딩 작업을 하면 request는 유지되어짐
 	// ex06_02.jsp를 실행시키면 url은 ex06_02.jsp가 나오고 ex06_04.jsp가 보여지고 color 빼고 값을 보여짐
@@ -37,6 +36,5 @@ p color <%= pageContext.getAttribute("color") %><br>
 	RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 	dispatcher.forward(request, response);
 %>
-
 </body>
 </html>

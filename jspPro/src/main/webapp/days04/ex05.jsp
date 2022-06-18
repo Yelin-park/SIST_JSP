@@ -24,7 +24,7 @@
 	5. pageContext 	: javax.servlet.jsp.PageContext  JSP 페이지에 대한 정보를 저장하는 객체
 	8. page 		: java.lang.Object  JSP 페이지를 구현한 자바 클래스 인스턴스   -> 페이지를 생성한 객체
 	
-	6. application 	: javax.servlet.ServletContext  웹애플리케이션(사이트) 전처에 대한 정보를 저장하는 객체
+	6. application 	: javax.servlet.ServletContext  웹애플리케이션(사이트) 전체에 대한 정보를 저장하는 객체
 	7. config 		: javax.servlet.ServletConfig  JSP 페이지의 설정 정보 저장
 	
 	9. exception 	: java.lang.Throwable  예외 처리 객체(에러 페이지에서만 사용 가능하다)

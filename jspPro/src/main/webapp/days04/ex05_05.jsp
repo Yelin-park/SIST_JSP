@@ -25,13 +25,13 @@
 <h3>ex05_05.jsp</h3>
 
 <%
-	String filePath = application.getInitParameter("filePath");
-
-	// 이클립스의 실제 배포 경로 찾기 -> 물리적인 경로(서버가 있는 경로)
-	// String realPath = application.getRealPath("");
-	// C:\Class\JSPClass
-	//	\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jspPro\
-	
+// 이클립스의 실제 배포 경로 찾기 -> 물리적인 경로(서버가 있는 경로)
+// String realPath = application.getRealPath("");
+// C:\Class\JSPClass
+//	\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jspPro\
+%>
+<%
+	String filePath = application.getInitParameter("filePath");	
 	String realPath = application.getRealPath(filePath);
 	// C:\Class\JSPClass\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jspPro\days03
 %>
