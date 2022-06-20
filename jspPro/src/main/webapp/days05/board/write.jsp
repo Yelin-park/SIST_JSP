@@ -31,7 +31,9 @@ table, tr, td {
 
 <div align="center">
  <h2>글쓰기</h2>
- <!-- action 속성 값을 안줬기 때문에 자기 자신을 호출 -->
+ <!-- action 속성 값을 안줬기 때문에 자기 자신을 호출
+ list.jsp에서 글쓰기 링크 태그를 클릭 후 write.htm 요청 URL로 Write.java 서블릿 호출하여 포워딩 되어져 wirte.jsp 출력이 되어졌기 때문에
+ 해당 페이지에서 form 태그를 submit하면 Write.java가 다시 호출되어짐 -->
  <!-- method가 post 이기 때문에 Write.java 서블릿에서 doPost() 메서드 호출 -->
  <form method="post">
   <table style="padding: 2px; width: 600px">
