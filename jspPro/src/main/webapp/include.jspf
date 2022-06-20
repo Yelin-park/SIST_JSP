@@ -1,0 +1,8 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- 모든 웹사이트에 아래와 같은 코딩이 필요하다라고 가정.. -->
+<!-- include 지시자로 가져오면 된다 -->
+<%
+	String contextPath = request.getContextPath();
+	//jsp:param 액션 태그는 포함할 페이지에 전달할 요청 파라미터의 값을 인코딩할 때 캐릭터 셋을 지정해주어야 올바르게 전달됨
+	request.setCharacterEncoding("UTF-8"); 
+%>
