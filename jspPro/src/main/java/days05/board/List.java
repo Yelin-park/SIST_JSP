@@ -24,7 +24,8 @@ public class List extends HttpServlet {
     }
     
     // list.htm
-    // list.htm?currentPage=3
+    // list.htm?currentPage=3	-> 페이지 번호를 가지고 옴
+    // /list.htm?searchCondition=2&searchWord=%EA%B2%8C%EC%8B%9C%EA%B8%80 	=> 검색조건과 검색어를 가지고 옴
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("> List.doGet() 호출됨 ");
 		
@@ -36,6 +37,10 @@ public class List extends HttpServlet {
 		// 페이징 처리하기 위해 총 레코드 수와 총 페이지 수를 알아야함
 		int totalRecords, totalPages = 0;
 		
+		// 검색하기 위해 필요한 변수
+		int searchCondition = 1; // 안주면 기본값 1(title)
+		String searchWord = "";
+		
 		Connection conn = DBconn.getConnection();
 		BoardDAOImpl dao = new BoardDAOImpl(conn);
 		
@@ -46,13 +51,23 @@ public class List extends HttpServlet {
 				currentPage = Integer.parseInt(request.getParameter("currentpage")); 
 			} catch(Exception e) {	}			
 			
-			list = dao.select(currentPage, numberPerPage);
+			// 검색했을 때는 검색조건, 검색어 파라미터가 넘어올 수도 있다.
+			// 넘어오면 해당하는 값을 안넘어오면 1을 줌
+			try {
+				searchCondition = Integer.parseInt(request.getParameter("searchCondition")); 
+			} catch(Exception e) {	}		
 			
-			// 페이징 처리를 위한 코딩..
-			totalRecords = dao.getTotalRecords(); // 총 레코드 수
-			totalPages = dao.getTotalPages(numberPerPage); // 총 페이지 수
+			searchWord = request.getParameter("searchWord") == null ? "" : request.getParameter("searchWord");
 			
-			
+			if(searchWord.equals("")) { // 검색어가 빈 문자열이라면 검색하기 위한 것이 아님
+				list = dao.select(currentPage, numberPerPage);
+				// 페이징 처리를 위한 코딩..
+				totalPages = dao.getTotalPages(numberPerPage); // 총 페이지 수
+			} else { // 빈 문자열이 아니라면 검색하기 위함
+				list = dao.search(currentPage, numberPerPage, searchCondition, searchWord);
+				totalPages = dao.getTotalPages(numberPerPage, searchCondition, searchWord); // 검색된 총 페이지 수
+			} // if			
+
 		} catch (SQLException e) {
 			System.out.println("> List.doGet() Exception 발생");
 			e.printStackTrace();
@@ -83,8 +98,7 @@ public class List extends HttpServlet {
 		
 		request.setAttribute("pageBlock", pageBlock); //  페이징 정보를 담은 객체를 pageBlock 이라는 이름에 담아서 포워딩시 보냄
 		
-		
-		String path = "/days05/board/list.jsp";
+		String path = "/days05/board/list.jsp";		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	} // doGet

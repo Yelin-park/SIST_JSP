@@ -106,8 +106,8 @@ a:hover {
    <c:forEach items="${list }" var="dto"><!-- list를 dto 변수에 담아서 반복하겠다. -->
     <tr>
      <td>${dto.seq }</td>
-     <td>${dto.title }</td>
-     <td>${dto.writer }</td>
+     <td><a href="<%= contextPath %>/cstvsboard/view.htm?seq=${dto.seq}">${dto.title }</a></td>
+     <td><a href="mailto:${dto.email }">${dto.writer }</a></td>
      <td>${dto.writedate }</td>
      <td>${dto.readed }</td>
     </tr>
@@ -136,6 +136,7 @@ a:hover {
       <c:if test="${pageBlock.prev }"><!-- prev가 true이면 이전 버튼 생성 -->
       <!-- 페이징 블럭 시작하는 값의 -1로 돌아가기 -->
        <a href="<%= contextPath%>/cstvsboard/list.htm?currentpage=${pageBlock.startOfPageBlock-1}">&laquo;</a>
+       <!-- &searchCondition=${param.searchCondition}&searchWord=${param.searchWord} -->
       </c:if>
       <c:forEach begin="${pageBlock.startOfPageBlock }" end="${pageBlock.endOfPageBlock }" step="1" var="i">
       <!-- 파라미터가 currentpage=? 넘어가기 때문에 pageBlock.currentPage 대신에 currentpage 사용 가능 -->
@@ -155,7 +156,7 @@ a:hover {
    </tr>
    <tr><!-- 검색하는 부분 -->
     <td colspan="5" align="center">
-     <form action="">
+     <form method="get"><!-- List.java의 doGet() 호출 -->
       <select name="searchCondition" id="searchCondition">
         <option value="1">title</option>
         <option value="2">content</option>
@@ -170,5 +171,31 @@ a:hover {
   </tfoot>
  </table>
 </div>
+
+<script>
+	// list.html?write=success 와 같은 파라미터 값을 가지고 왔다면 글쓰기 완료 경고창 띄우기
+	if('<%= request.getParameter("write") %>' == 'success'){
+		alert("글 쓰기 완료!!!");
+	}
+	
+	// list.html?delete=success 와 같은 파라미터 값을 가지고 왔다면 글 삭제 완료 경고창 띄우기
+	if('<%= request.getParameter("delete") %>' == 'success'){
+		alert("글 삭제 완료!!!");
+	}
+</script>
+
+<script>
+	// 검색 후 검새조건, 검색어 상태 관리(검색하는 텍스트 박스에서)
+	// EL 안에서 삼항연산자 사용 가능
+	// 검색조건이 비어있다면 1로주고 아니라면 검색조건 가져온 값으로 상태 관리
+	$("#searchCondition").val('${empty param.searchCondition ? 1 : param.searchCondition }');
+	$("#searchWord").val('${param.searchWord}'); // 검색어가 없으면 빈문자열이 찍혀서 상태관리 안해도됨
+	
+	// list.htm?currentpage=${i}&searchCondition=${param.searchCondition}&searchWord=${param.searchWord}
+	// 현재페이지가 아닌 a 링크 태그의 href 속성 값에 검색 조건과 검색어 파라미터를 추가
+	$(".pagination a:not(.active)").attr("href", function ( i, val ){
+	   return val + "&searchCondition=${ param.searchCondition }&searchWord=${ param.searchWord }"; 
+	});   
+</script>
 </body>
 </html>
