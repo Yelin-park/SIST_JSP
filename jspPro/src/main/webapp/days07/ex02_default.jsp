@@ -88,7 +88,8 @@
 
 <!-- 인증 + 권한(관리자) -->
 <%
-	if(logonID != null && logonID.equals("admin")){ // auth 쿠키 이름에 값이 없어서 null이라서 logonID != null 안하면 500 에러
+	//auth 쿠키 이름에 값이 없어서 null이라서 logonID != null 안하면 500 에러
+	if(logonID != null && logonID.equals("admin")){ 
 %>
 <a href="#">급여관리</a><br>
 <a href="#">사원관리</a><br>

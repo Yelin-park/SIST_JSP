@@ -43,6 +43,7 @@ public class Cookies {
       return this.cookieMap.get(cname) != null;
    }
    
+   // 쿠키를 생성하는 메서드
    public static Cookie createCookie(String cname, String cvalue) throws UnsupportedEncodingException {
       Cookie cookie = new Cookie(cname, URLEncoder.encode( cvalue , "UTF-8") );
       return cookie;
