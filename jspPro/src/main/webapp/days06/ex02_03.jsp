@@ -31,5 +31,32 @@
 	}
 %>
 </form>
+<br />
+<br />
+<!--
+체크박스 체크 후 쿠키 삭제 링크 태그를 클릭하면
+value 속성값 = 쿠키 이름 -> 쿠키의 이름 값을 가져와서
+ex02_04.jsp로 넘기면서 체크박스의 name 속성 값으로
+ex02_04.jsp?ckbCookie=name&ckbCookie=age 이렇게 넘길 예정
+ -->
+<a href="ex02_04.jsp">쿠키 삭제</a><br>
+<a href="ex02_05.jsp">쿠키 수정</a><br>
+<a href="ex02.jsp">쿠키 Home</a><br>
+
+<!-- 기억 *** -->
+<script>
+	$("a").on("click", function (event) {
+		event.preventDefault(); // a 링크 태그의 이동하는 기본 기능을 막기
+		
+		// 체크된 체크박스를 얻어와서 그 박스의 value 속성 값을 얻어와야함, 쿠키이름을 얻어오면 코딩으로 파라미터 값을 만들어야함
+		// 일일히 ex02_04.jsp?ckbCookie=name&ckbCookie=age 이렇게 만들 필요 없이
+		// (기억) jQuery serialize() 메서드
+		// ckbCookie=name&ckbCookie=age  이와 같은 쿼리스트링을 만들어줌
+		var queryString = $("form").serialize();
+		// $(this).attr("href") = 현재 클릭한 a 링크 태그의 href 속성을 가져오겠다.
+		// href 속성 값을 ex02_04.jsp?ckbCookie=name&ckbCookie=age 이렇게 만들겠다.
+		location.href = $(this).attr("href") + "?" + queryString; 		
+	});
+</script>
 </body>
 </html>

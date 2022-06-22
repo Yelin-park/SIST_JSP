@@ -1,0 +1,15 @@
+<%@page import="com.util.Cookies"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	// 인증(로그인)한다면 쿠키이름(auth)으로 쿠키값(로그인ID) 저장
+	String cname = "auth";
+	String logonID = null;
+	
+	// com.util.Cookies.java
+	// Cookies.java 객체 생성 -> 생성자 호출 -> CookieMap(key-쿠키이름, value-쿠키객체)
+	Cookies cookies = new Cookies(request);
+	if(cookies.exists(cname)){ // 쿠키이름에 해당하는 쿠키가 존재하니?
+		// 있으면 로그인을 했다(인증)
+		logonID = cookies.getValue(cname); // 쿠키 이름으로 쿠키값을 가져와서 ID변수에 저장
+	}
+%>
