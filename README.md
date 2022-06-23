@@ -6,3 +6,9 @@
 - SIST_JSP/jspPro/src/main/webapp/days06/ex01.jsp<br>
 - SIST_JSP/jspPro/src/main/webapp/days05/board<br>
 - SIST_JSP/jspPro/src/main/java/days05/board 패키지<br>
+
+### 모델 2구조 MVC 패턴 게시판 아래 자료 참고하기
+
+- SIST_JSP/jspPro/src/main/webapp/days08/ex09.jsp<br>
+- SIST_JSP/jspPro/src/main/webapp/days08/board<br>
+- SIST_JSP/jspPro/src/main/java/days08/board 패키지<br>
