@@ -68,7 +68,7 @@
 	// 취소 버튼을 클릭하면 view.htm 요청URL로 View.java 서블릿 호출하여 
 	$("#cancel").on("click", function() {
 		// hitory.go(-1); // 이게 맞는 코딩
-		location.href = "<%= contextPath %>/cstvsboard/view.do?seq=${param.seq}"; // 이렇게 하면 조회수 증가시키고 게시글 보여짐
+		location.href = "<%= contextPath %>/board/view.do?seq=${param.seq}"; // 이렇게 하면 조회수 증가시키고 게시글 보여짐
 	});
 </script>
 </body>

@@ -39,7 +39,7 @@ public class Write extends HttpServlet {
 		// 1. 파라미터로 넘어오는 값을 가지고 BoardDTO dto 생성
 		String writer = request.getParameter("writer");
 		String pwd = request.getParameter("pwd");
-		String email = request.getParameter("eamil");
+		String email = request.getParameter("email");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		int tag = Integer.parseInt(request.getParameter("tag"));
