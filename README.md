@@ -12,3 +12,9 @@
 - SIST_JSP/jspPro/src/main/webapp/days08/ex09.jsp<br>
 - SIST_JSP/jspPro/src/main/webapp/days08/board<br>
 - SIST_JSP/jspPro/src/main/java/days08/board 패키지<br>
+
+### 모델 2구조 MVC 패턴 방명록 아래 자료 참고하기
+
+- SIST_JSP/jspPro/src/main/webapp/days09/board 폴더<br>
+- SIST_JSP/jspPro/src/main/webapp/days09/guestbook 폴더<br>
+- SIST_JSP/jspPro/src/main/java/days09 패키지<br>
