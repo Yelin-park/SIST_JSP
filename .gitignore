@@ -1,3 +1,4 @@
+!*.xml
 .metadata
 Servers
 jspPro/.settings
@@ -5,6 +6,6 @@ jspPro/build
 jspPro/.classpath
 jspPro/.project
 jspPro/.tern-project
-jspPro/src/main/webapp/META-INF
-jspPro/src/main/webapp/WEB-INF
+jspPro/src/main/webapp/META-INF/MANIFEST.MF
+jspPro/src/main/webapp/WEB-INF/lib
 jspPro/src/main/webapp/practice
