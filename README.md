@@ -18,3 +18,7 @@
 - SIST_JSP/jspPro/src/main/webapp/days09/board 폴더<br>
 - SIST_JSP/jspPro/src/main/webapp/days09/guestbook 폴더<br>
 - SIST_JSP/jspPro/src/main/java/days09 패키지<br>
+
+### MVC 패턴 답변형(계층형) 게시판
+
+- days10일차

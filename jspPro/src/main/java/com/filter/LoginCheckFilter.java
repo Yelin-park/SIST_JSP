@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
-/*@WebFilter("/days09/board/*")*/ // days09의 board 폴더 안에 있는 것들의 모든 요청이 일어날 때 이 필터를 거치겠다.
+@WebFilter("/days09/board/*") // days09의 board 폴더 안에 있는 것들의 모든 요청이 일어날 때 이 필터를 거치겠다.
 public class LoginCheckFilter implements Filter {
 
 	// 디폴트 생성자

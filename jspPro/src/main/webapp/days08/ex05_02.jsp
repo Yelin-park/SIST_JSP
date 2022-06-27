@@ -27,7 +27,7 @@
 <c:choose>
  <c:when test="${kor >= 90 && kor <= 100 }">수</c:when>
  <c:when test="${kor ge 80 && kor lt 90 }">우</c:when>
- <c:otherwise>가</c:otherwise><!--  -->
+ <c:otherwise>가</c:otherwise>
 </c:choose>
 
 <!-- 그 외 -->

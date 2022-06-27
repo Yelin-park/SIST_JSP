@@ -37,10 +37,12 @@
 </ol>
 
 <hr />
+
 <c:url var="url" value="ex05.jsp"></c:url>
 <c:redirect url="${url }">
  <c:param name="name" value="admin"></c:param>
  <c:param name="age" value="20"></c:param>
 </c:redirect>
+
 </body>
 </html>
