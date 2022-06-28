@@ -25,7 +25,7 @@ public class CharacterEncodingFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		System.out.println("> CharacterEncodingFilter.doFilter() 호출됨");
+		// System.out.println("> CharacterEncodingFilter.doFilter() 호출됨");
 		// 매번 이렇게 선언하지 않고.. init 메서드에서..
 		// request.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding(this.encoding);

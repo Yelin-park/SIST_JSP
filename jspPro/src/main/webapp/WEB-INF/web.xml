@@ -33,19 +33,4 @@
   <dispatcher>REQUEST</dispatcher><!-- 요청할 때 -->
  </filter-mapping>
  
-   <!-- 단 하나의 서블릿 == MVC의 C(컨트롤러) 등록 -->
- <servlet>
-  <servlet-name>dispatcher</servlet-name>
-  <servlet-class>days10.replyboard.controller.DispatcherServlet</servlet-class>
-  <init-param><!-- 서블릿 객체가 생성될 때 commandHandler.properties 파일을 path라는 이름으로 가져오겠다. -->
-   <param-name>path</param-name>
-   <param-value>/days10/replyboard/commandHandler.properties</param-value><!-- 사용하고자 하는 프로터피 파일 경로 잘주기 -->
-  </init-param>
-  <load-on-startup>1</load-on-startup>
- </servlet>
- <servlet-mapping>
-  <servlet-name>dispatcher</servlet-name>
-  <url-pattern>*.do</url-pattern>
- </servlet-mapping>
- 
 </web-app>
