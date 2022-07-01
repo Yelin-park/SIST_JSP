@@ -37,10 +37,7 @@ public class DBCPinitListener implements ServletContextListener{
 		System.out.println(prop.getProperty("driverClassName"));
 		System.out.println(prop.getProperty("url"));
 		System.out.println(prop.getProperty("username"));
-		System.out.println(prop.getProperty("password"));
-
-		
-		
+		System.out.println(prop.getProperty("password"));		
 		
 	} // contextInitialized
 

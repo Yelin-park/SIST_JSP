@@ -71,5 +71,51 @@ public class EmpDAO{
        
       return empList;
    }  // 
+   
+   public List<EmpDTO> selectEmpList(Connection conn) throws SQLException, NamingException {
+	      ArrayList<EmpDTO>  empList = null; 
+	      PreparedStatement pstmt = null;
+
+	      String sql = "SELECT *  "
+	    		  	+"   FROM emp "
+	    		  	+ "  ORDER BY ename ASC ";
+
+	      try{
+	         pstmt = conn.prepareStatement(sql);    
+	         ResultSet rs =  pstmt.executeQuery();
+
+	         int empno;
+	         String ename, job;
+	         int mgr;
+	         Date hiredate;  // java.sql.Date  tring
+	         double sal, comm;
+	         int deptno;
+	         
+	         if( rs.next() ){
+	            empList = new ArrayList<EmpDTO>();
+	            do{
+	               empno = rs.getInt("empno");
+	               ename = rs.getString("ename");
+	               job = rs.getString("job");
+	               mgr = rs.getInt("mgr");
+	               hiredate = rs.getDate("hiredate");
+	               sal = rs.getDouble("sal");
+	               comm = rs.getDouble("comm");
+	               deptno = rs.getInt("deptno");
+
+	               EmpDTO dto = new EmpDTO(empno, ename, job, mgr, hiredate, sal, comm, deptno, ename);
+	               empList.add(dto);
+	            }while( rs.next() );
+	         } // if
+
+	         pstmt.close();
+	         rs.close();
+	         // conn.close();
+	      }catch(Exception e){
+	         e.printStackTrace();
+	      }
+	       
+	      return empList;
+	   }  // 
 
 } // class

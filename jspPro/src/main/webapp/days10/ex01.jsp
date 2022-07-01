@@ -68,7 +68,7 @@
 			ㄷ. 새글의 깊이(DEPTH)는 0 또는 1로 설정한다.(예시는 0로 설정)
 		
 		2) 답글 쓰기
-			*** 어떤 부모글의 답글을 다는지를 알아야함
+			*** 어떤 부모글에 답글을 다는지를 알아야함
 		  글번호(seq:PK)					그룹(REF)	순번(STEP)	깊이(DEPTH) ...
 			2			 두 번째 게시글		2			1			0
 			
@@ -90,7 +90,7 @@
 			ㄴ WriteHandler.java (8)
 		days10.replyboard.domain 		- DTO
 			ㄴ ReplyBoardDTO.java (1)
-		days10.replyboard.persistence 	- DAT
+		days10.replyboard.persistence 	- DAO
 			ㄴ IReplyBoard.java 인터페이스 (2)
 			ㄴ ReplyBoardDAO.java (3)
 		days10.replyboard.service 		- SERVICE
@@ -185,7 +185,7 @@
 			 		DEPTH : 0	  1		2		3 ...			 		
 			
 		- THREAD로 ORDER BY를 하면	
-		글번호(seq:PK)	제목(subject) 				THREAD			STEP (DEPTH 아닌가??)
+		글번호(seq:PK)	제목(subject) 				THREAD			DEPTH
 			1 			첫 번째 게시글				1000			0		(1~1000) 하나의 그룹
 			2 			두 번째 게시글				2000			0		(1001~2000)
 			3 			세 번째 게시글				3000			0		(2001~3000)

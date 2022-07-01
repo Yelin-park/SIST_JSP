@@ -7,7 +7,7 @@ var httpRequest = null;
 
 // 브라우저 종류 또는 버전에 따라 객체 생성하는 함수 선언
 function getXMLHttpRequest(){
-   if(window.ActiveXObject){
+   if(window.ActiveXObject){ // IE 6 버전 기준으로 이전 이후
       try {
          return new ActiveXObject("Msxml2.XMLHTTP");
       } catch (e) {

@@ -32,5 +32,6 @@
   <url-pattern>/*</url-pattern><!-- 모든 자원들 요청할 때(GET, POST 방식 상관없이) -->
   <dispatcher>REQUEST</dispatcher><!-- 요청할 때 -->
  </filter-mapping>
+
  
 </web-app>

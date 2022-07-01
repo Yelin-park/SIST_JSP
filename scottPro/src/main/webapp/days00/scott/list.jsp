@@ -119,5 +119,37 @@
 	});
 </script>
 
+
+<hr>
+
+<input type="button" id="btn1" value="jquery ajax + emp + json" />
+<p id="demo"></p>          
+
+ <script>
+    $(function (){
+        $("#btn1").on("click", function(event) {
+           $.ajax({ 
+        	   	 // .jsp를 줘도 되지만 MVC패턴으로 할거면 요청URL로 하는게 맞음
+                 url:"/scottPro/empjson.do",  // 모든 요청은 컨트롤러(서블릿)을 거치겠다.
+                 dataType:"json", // text, html, xml, script, 등등
+                  type:"GET",
+                  cache:false, // 꼭 기억
+                  success:function (data, textStatus, jqXHR){ 
+                     // data.emp            js Object 변환     
+                     // {  "emp" : [ {},{},{},]}
+                     // var empArray = data.emp;
+                     $( data.emp ).each( function ( i , elem ){
+                        $("#demo").append( $("<li></li>").text( elem.empno +" / " + elem.ename ) );
+                     } ) ;
+                     
+                  }, 
+                  error:function (){
+                     alert("에러~~");
+                  }
+              });
+        }) // click
+    }); // ready
+ </script>
+
 </body>
 </html>
