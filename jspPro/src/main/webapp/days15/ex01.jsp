@@ -28,6 +28,5 @@
 </script>
 
 <!-- <script src="https://maps.googleapis.com/maps/api/js?key=키발급&callback=myMap"></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKbtmdbLv3PyX5F-zR9TIOZSqVuy0Nj-8&callback=myMap"></script>
 </body>
 </html>
