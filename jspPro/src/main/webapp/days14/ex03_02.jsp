@@ -33,7 +33,6 @@
 			city:"SEOUL"
 	};
 
-
 	function setPerson() {
 		var personJSON = JSON.stringify(person);
 		console.log("personJSON : " + personJSON);
@@ -42,7 +41,6 @@
 		// F12 -> application -> Storage -> LocalStorage(로컬저장소) 확인
 		localStorage.setItem("personJSON", personJSON);		
 	} // setPerson
-
 	
 	function getPerson() {
 		// JSON 표기법으로 생성된 문자열
@@ -55,8 +53,6 @@
 		console.log("2. age : " + jsObj.age);
 		// 3. city
 		console.log("3. city : " + jsObj.city);
-		
-
 	} // getPerson
 </script>
 </body>

@@ -29,8 +29,7 @@
 
 $(function (){
     $("#btnEmpnoCheck").on("click", function(event) {
-       // ?empno=7369
-       var params = $("form").serialize();
+       var params = $("form").serialize(); // ?empno=7369 이렇게 만들어주는 jquery 메서드
        // jquery ajax 함수 :  [$.ajax()]   - get/post      json/xml/js 등등
        // ㄱ.  get    : getJSON(), getScript(), get()
        // ㄴ.  post  : post()
